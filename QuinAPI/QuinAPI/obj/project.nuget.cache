@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "9vM9Y6hufQjOFR9XmyblziLfxTdTmt+B/RmEd4EuG8BgqCK6gbJmrgA7VdZBQ4uspPdceIuZiP8tXpTQPNPr2g==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\ToastedProphet\\Desktop\\Quintessence\\QuinAPI\\QuinAPI\\QuinAPI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ToastedProphet\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\ToastedProphet\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\ToastedProphet\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\ToastedProphet\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
+    "C:\\Users\\ToastedProphet\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "C:\\Users\\ToastedProphet\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
+    "C:\\Users\\ToastedProphet\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
+  ],
+  "logs": []
+}

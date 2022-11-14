@@ -1,0 +1,89 @@
+<!-- STOCKS TABLE -->
+
+<div class="pageBody">
+    <div style="width: 1000px; height: 75px;">
+    </div>
+    <div class="mx-auto mb-3 text-center " style="width: 1000px; height: 50px; color: #d9d9d9;">
+        <h1 class="align-bottom custHead">Stocks</h1>
+    </div>
+    <table class="stockTable mx-auto" style="width: 1000px;">
+        <thead>
+            <tr style="border-bottom: solid 2px #d9d9d9; background-color: #4d4d4d;">
+                <th scope="col" [appSort]="mStocksTable" data-order="desc" data-name="stock" style="width: 300px;"
+                    (click)="OrderStockBy('stock')" id="stock"
+                    [ngClass]="{stockPointer: true, active:stockColumn == 'stock',desc:stockIsDesc, asc:!stockIsDesc}">
+                    Stock</th>
+                <th scope="col" [appSort]="mStocksTable" data-order="desc" data-name="industry" style="width: 400px;"
+                    (click)="OrderStockBy('industry')" id="industry"
+                    [ngClass]="{stockPointer: true, active:stockColumn == 'industry',desc:stockIsDesc, asc:!stockIsDesc}">
+                    Industry</th>
+                <th scope="col" [appSort]="mStocksTable" data-order="desc" data-name="sector" style="width: 150px;"
+                    (click)="OrderStockBy('sector')" id="sector"
+                    [ngClass]="{stockPointer: true, active:stockColumn == 'sector',desc:stockIsDesc, asc:!stockIsDesc}">
+                    Sector</th>
+                <th scope="col" [appSort]="mStocksTable" data-order="desc" data-name="currency_code"
+                    style="width: 250px;" (click)="OrderStockBy('currency_code')" id="currencyCode"
+                    [ngClass]="{stockPointer: true, active:stockColumn == 'currency_code',desc:stockIsDesc, asc:!stockIsDesc}">
+                    Currency
+                    Code</th>
+            </tr>
+            <tr>
+                <th colspan="4">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="searchStr" name="searchStr" [(ngModel)]="mSearchString"
+                        placeholder="Search..."
+                        style="border: transparent; width: 400px; background-color: #303030; color: #d9d9d9;"
+                        (input)="onStockSearch()">
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of mStocksTable; let rowIndex = index;"
+                [ngClass]="{'active' : mSelectedStock?.id === item.id}" (click)="onSelectClick(item)">
+                <td style="width: 300px;">{{ item.stock }}</td>
+                <td style="width: 400px;">{{ item.industry }}</td>
+                <td style="width: 150px;">{{ item.sector }}</td>
+                <td style="width: 250px;">{{ item.currency_code }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+    <!-- STOCK VALUES -->
+    <div class="mx-auto mt-3 mb-3 text-center" style="width: 100%; color: #d9d9d9;">
+        <h1 class="custHead">{{ mStockValuesHeader }}</h1>
+    </div>
+
+
+    <table *ngIf="mStockTableClicked" class="stockValueTable mx-auto" style="width: 1000px;">
+        <thead>
+            <tr style="border-bottom: solid 2px #d9d9d9; background-color: #4d4d4d;">
+                <!-- <i class="fa-solid fa-arrows-up-down"></i> -->
+                <th scope="col" [appSort]="mStockValuesTable" data-order="desc" data-name="StockName"
+                    style="width: 400px;" (click)="OrderStockValuesBy('StockName')" id="stock"
+                    [ngClass]="{stockValuesPointer: true, active:stockValuesColumn == 'StockName',desc:stockValuesIsDesc, asc:!stockValuesIsDesc}">
+                    Stock</th>
+                <th scope="col" [appSort]="mStockValuesTable" data-order="desc" data-name="Date" style="width: 400px;"
+                    (click)="OrderStockValuesBy('Date')" id="stock"
+                    [ngClass]="{stockValuesPointer: true, active:stockValuesColumn == 'Date',desc:stockValuesIsDesc, asc:!stockValuesIsDesc}">
+                    Date </th>
+                <th scope="col" [appSort]="mStockValuesTable" data-order="desc" data-name="Value" style="width: 200px;"
+                    (click)="OrderStockValuesBy('Value')" id="stock"
+                    [ngClass]="{stockValuesPointer: true, active:stockValuesColumn == 'Value',desc:stockValuesIsDesc, asc:!stockValuesIsDesc}">
+                    Value </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of mStockValuesTable; let rowIndex = index;">
+                <td style="width: 400px;">{{ item.StockName }}</td>
+                <td style="width: 400px;">{{ item.Date }}</td>
+                <td style="width: 200px;">{{ item.Value }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="mx-auto mt-2" style="width: 1000px; color: #d9d9d9;">
+        <button type="button" class="btn btn-outline-light" style="float: right;" [disabled]="!mStockTableClicked"
+        (click)="downloadJson()">Export as JSON</button>
+    </div>
+</div>
